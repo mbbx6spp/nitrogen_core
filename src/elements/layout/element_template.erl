@@ -26,12 +26,13 @@ render_element(Record) ->
     Body.
 
 get_cached_template(File) ->
-    FileAtom = list_to_atom("template_file_" ++ File),
+    BaseName = filename:basename(File, ".html"),
+    FileAtom = list_to_atom("template_file_" ++ BaseName),
 
-    LastModAtom = list_to_atom("template_lastmod_" ++ File),
+    LastModAtom = list_to_atom("template_lastmod_" ++ BaseName),
     LastMod = mochiglobal:get(LastModAtom),
 
-    CacheTimeAtom = list_to_atom("template_cachetime_" ++ File),
+    CacheTimeAtom = list_to_atom("template_cachetime_" ++ BaseName),
     CacheTime = mochiglobal:get(CacheTimeAtom),
     
     %% Check for recache if one second has passed since last cache time...
