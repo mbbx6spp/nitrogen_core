@@ -1,0 +1,36 @@
+#+STYLE: <LINK href="stylesheet.css" rel="stylesheet" type="text/css" />
+#+TITLE: Nitrogen 2.x Documentation: Handlers - Security Handler
+#+AUTHOR: Susan Potter (@susanpotter)
+#+OPTIONS:   H:2 num:1 toc:1 \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+EMAIL: 
+
+#+TEXT: [[file:../index.org][Getting Started]] | [[file:../api.org][API]] | [[file:../elements.org][Elements]] | [[file:../actions.org][Actions]] | [[file:../validators.org][Validators]] | Handlers | [[file:../about.org][About]]
+#+HTML: <div class=headline>Handlers / Security Handler</div>
+
+* Overview
+
+  Nitrogen 2.x allows you to define your own handlers. One of the 
+  types of handlers is a =security_handler=. This allows application
+  developers to authenticate and authorize users to access specific 
+  pages.
+
+* Implement
+
+  To do this you will need to create a =security_handler= behavior 
+  callback module (i.e. declare =behaviour(security_handler)= and 
+  export and implement functions: =init/2=, =finish=2=.
+
+  An example of such a custom handler can be found 
+  [[https://gist.github.com/830529][in this GitHub Gist]].
+
+* Hook up the Handler
+
+  In your =loop= function (where you have a line like 
+  =nitrogen:run()=) you will need to put the following before this 
+  function call:
+
+  =nitrogen:handler(your_security_handler, your_callback_module)=
+
+  You might be wondering what =your_callback_module= is referring to.
+  If so, please see the 
+  [[file:./security_callback.org][Security Callback]] page.

@@ -1,0 +1,26 @@
+#+STYLE: <LINK href="stylesheet.css" rel="stylesheet" type="text/css" />
+#+TITLE: Nitrogen 2.x Documentation: Handlers - Security Callback Module
+#+AUTHOR: Susan Potter (@susanpotter)
+#+OPTIONS:   H:2 num:1 toc:1 \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+EMAIL: 
+
+#+TEXT: [[file:../index.org][Getting Started]] | [[file:../api.org][API]] | [[file:../elements.org][Elements]] | [[file:../actions.org][Actions]] | [[file:../validators.org][Validators]] | Handlers | [[file:../about.org][About]]
+#+HTML: <div class=headline>Handlers / Security Callback Module</div>
+
+* Overview
+
+  Accompanying a =security_handler= module might be a callback 
+  module. =http_basic_auth_security_handler= does this, also see 
+  [[https://gist.github.com/830529][this GitHub Gist]] for another 
+  example with accompanying =security_handler= module.
+
+  Depending on the =security_handler= module you will need to 
+  implement and export some functions that the security handler 
+  will callback into.
+
+* http_basic_auth_security_handler
+
+  In the case of =http_basic_auth_ssecurity_handler= your callback 
+  module will need to implement and export the following functions:
+  + =is_protected/1= - where PageModule is passed in as argument.
+  + =realm/0= - that needs to return with name of HTTP Basic Realm
