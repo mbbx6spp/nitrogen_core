@@ -25,6 +25,7 @@ render_element(Record) ->
 
     Value = wf:html_encode(Record#textbox.text, Record#textbox.html_encode),
     wf_tags:emit_tag(input, [
+        {name, Record#textbox.name},
         {type, text}, 
         {class, [textbox, Record#textbox.class]},
         {style, Record#textbox.style},

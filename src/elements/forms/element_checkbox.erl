@@ -24,7 +24,7 @@ render_element(Record) ->
     [
         % Checkbox...
         wf_tags:emit_tag(input, [
-            {name, Anchor},
+            {name, Record#checkbox.name},
             {id, Anchor},
             {type, checkbox},
             {class, [checkbox, Record#checkbox.class]},
