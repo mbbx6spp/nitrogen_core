@@ -12,6 +12,7 @@ render_element(Record) ->
     Value = wf:html_encode(Record#hidden.text, Record#hidden.html_encode),
     wf_tags:emit_tag(input, [
         {class, Record#hidden.class},
+        {name, Record#hidden.name},
         {type, hidden},
         {value, Value}
     ]).
