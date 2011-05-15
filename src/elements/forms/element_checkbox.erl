@@ -27,7 +27,7 @@ render_element(Record) ->
             {name, Record#checkbox.name},
             {id, Anchor},
             {type, checkbox},
-            {class, [checkbox, Record#checkbox.class]},
+            {class, [checkbox, Record#checkbox.class, wf_render_elements:normalize_id(ID)]},
             {style, Record#checkbox.style},
             {value, Record#checkbox.value},
             {CheckedOrNot, true}

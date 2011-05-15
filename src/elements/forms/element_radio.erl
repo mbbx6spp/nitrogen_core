@@ -30,7 +30,7 @@ render_element(Record) ->
             {id, Anchor},
             {value, Record#radio.value},
             {type, radio},
-            {class, [radio, Record#radio.class]},
+            {class, [radio, Record#radio.class, wf_render_elements:normalize_id(ID)]},
             {style, Record#radio.style},
             {CheckedOrNot, true}
         ]),

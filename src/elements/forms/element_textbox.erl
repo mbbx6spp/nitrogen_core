@@ -27,7 +27,7 @@ render_element(Record) ->
     wf_tags:emit_tag(input, [
         {name, Record#textbox.name},
         {type, text}, 
-        {class, [textbox, Record#textbox.class]},
+        {class, [textbox, Record#textbox.class, wf_render_elements:normalize_id(ID)]},
         {style, Record#textbox.style},
         {value, Value}
     ]).

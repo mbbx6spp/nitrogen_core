@@ -28,7 +28,7 @@ render_element(Record) ->
 
     wf_tags:emit_tag(select, Options, [
         {name, Record#dropdown.name},
-        {class, [dropdown, Record#dropdown.class]},
+        {class, [dropdown, Record#dropdown.class, wf_render_elements:normalize_id(ID)]},
         {style, Record#dropdown.style}
     ]).
 
