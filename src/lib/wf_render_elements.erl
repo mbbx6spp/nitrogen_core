@@ -5,6 +5,7 @@
 -module (wf_render_elements).
 -include_lib ("wf.hrl").
 -export ([
+    normalize_id/1,
     render_elements/1,
     temp_id/0
 ]).
