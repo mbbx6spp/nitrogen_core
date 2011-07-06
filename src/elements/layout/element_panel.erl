@@ -10,6 +10,7 @@ reflect() -> record_info(fields, panel).
 
 render_element(Record) -> 
     wf_tags:emit_tag('div', Record#panel.body, [
+        {id, Record#panel.id},
         {class, ["panel", Record#panel.class]},
         {style, Record#panel.style}
     ]).
