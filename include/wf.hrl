@@ -8,7 +8,7 @@
   series_id,   % A unique ID assigned to the first request which stays constant on repeated requests.
   module,      % The requested page module
   path_info,   % Any extra info passed with the request
-  async_mode= comet % {poll, Interval} or comet 
+  async_mode= comet % {poll, Interval} or comet
 }).
 
 % Event Information. A serialized version of this record
@@ -39,7 +39,7 @@
   response_bridge,     % Holds the simple_bridge response object
   anchor=undefined,    % Holds the unique ID of the current anchor element.
   data=[],             % Holds whatever the page_module:main/1 method returns: HTML, Elements, Binary, etc..
-  queued_actions=[],   % List of actions queued in main/1, event/2, or when rendering elements.  
+  queued_actions=[],   % List of actions queued in main/1, event/2, or when rendering elements.
 
   % These are all serialized, sent to the browser
   % and de-serialized on each request.
